@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUKUHADI TECH - Solusi Layanan IT Profesional & Toko Hardware Resmi</title>
+  <meta name="description"
+    content="Layanan IT profesional mencakup pembuatan web & aplikasi, instalasi jaringan komputer, cloud & cyber security, serta penyedia perangkat PC workstation, router, dan lisensi resmi.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar-wrapper">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#hero" class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="brand-name">KUKUHADI<span>TECH</span></div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="active">Beranda</a></li>
+          <li><a href="#katalog">Layanan & Produk</a></li>
+          <li><a href="#keunggulan">Keunggulan</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Tombol Tema Gelap/Terang -->
+          <button class="icon-btn" id="themeToggleBtn" title="Ganti Tema">
+            <!-- Icon injected by JS -->
+          </button>
+
+          <!-- Tombol Keranjang Belanja -->
+          <button class="icon-btn" id="cartBtn" title="Keranjang Belanja">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+            <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+          </button>
+
+          <!-- CTA Konsultasi Cepat -->
+          <button class="btn btn-primary btn-sm" onclick="openConsultModal()">
+            Konsultasi Gratis
+          </button>
+
+          <!-- Mobile Toggle -->
+          <button class="icon-btn mobile-toggle" id="mobileToggleBtn" aria-label="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="section-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z" />
+              </svg>
+              Solusi IT & Hardware Terpercaya #1
+            </div>
+            <h1>Akselerasi Bisnis Anda dengan <span class="gradient-text">Layanan IT Terpadu</span> & Produk Berkualitas
+            </h1>
+            <p>
+              Kami menyediakan <strong>3 Jasa Pelayanan IT Profesional</strong> (Pengembangan Web & Aplikasi, Instalasi
+              Jaringan Jaringan Kantor, serta Keamanan Siber & Cloud) ditambah <strong>3 Produk IT Unggulan</strong>
+              siap pakai dengan garansi resmi.
+            </p>
+            <div class="hero-cta">
+              <a href="#katalog" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="7" height="7" x="3" y="3" rx="1" />
+                  <rect width="7" height="7" x="14" y="3" rx="1" />
+                  <rect width="7" height="7" x="14" y="14" rx="1" />
+                  <rect width="7" height="7" x="3" y="14" rx="1" />
+                </svg>
+                Lihat Katalog Lengkap
+              </a>
+              <button class="btn btn-secondary" onclick="openConsultModal()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                Jadwalkan Konsultasi
+              </button>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <h4>500+</h4>
+                <p>Klien & Proyek Selesai</p>
+              </div>
+              <div class="stat-item">
+                <h4>99.9%</h4>
+                <p>Uptime Jaringan & Server</p>
+              </div>
+              <div class="stat-item">
+                <h4>100%</h4>
+                <p>Produk Bergaransi Resmi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual / Live Server Status Mockup -->
+          <div class="hero-visual">
+            <div class="visual-card-main">
+              <div class="visual-header">
+                <div style="display:flex; align-items:center; gap:0.5rem;">
+                  <div style="width:10px; height:10px; border-radius:50%; background:#ef4444;"></div>
+                  <div style="width:10px; height:10px; border-radius:50%; background:#f59e0b;"></div>
+                  <div style="width:10px; height:10px; border-radius:50%; background:#10b981;"></div>
+                  <span style="font-size:0.8rem; font-weight:600; margin-left:0.5rem;">KUKUHADI IT NOC Console</span>
+                </div>
+                <div class="status-pill">
+                  <span class="status-dot"></span>
+                  Active Monitoring
+                </div>
+              </div>
+
+              <div class="server-metric">
+                <div class="metric-label">
+                  <span>Server & Web Application Uptime</span>
+                  <span style="font-weight:700; color:var(--accent);">99.98%</span>
+                </div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 98%;"></div>
+                </div>
+              </div>
+
+              <div class="server-metric">
+                <div class="metric-label">
+                  <span>Network Bandwidth Throughput</span>
+                  <span style="font-weight:700; color:var(--primary);">1.2 Gbps / Optimal</span>
+                </div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="server-metric">
+                <div class="metric-label">
+                  <span>Cyber Defense & Firewall Shield</span>
+                  <span style="font-weight:700; color:var(--secondary);">100% Protected</span>
+                </div>
+                <div class="metric-bar">
+                  <div class="metric-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div
+                style="display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid var(--border-color); font-size:0.8rem; color:var(--text-muted);">
+                <span>Teknisi Tersedia: <strong>12 Engineer Siap Respon</strong></span>
+                <span style="color:var(--accent); font-weight:600;">24/7 SLA Fast Response</span>
+              </div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-top">
+              <div class="badge-icon" style="background:#0284c7;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div>
+                <div style="font-size:0.85rem; font-weight:700;">Garansi Layanan</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">Support Hingga 6 Bulan</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom">
+              <div class="badge-icon" style="background:#10b981;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <div style="font-size:0.85rem; font-weight:700;">100% Produk Original</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);">Distributor Resmi Indonesia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KATALOG LAYANAN & PRODUK ================= -->
+    <section class="section section-alt" id="katalog">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Katalog Terlengkap</div>
+          <h2>Pilihan <span class="gradient-text">Layanan IT & Produk</span> Unggulan</h2>
+          <p>
+            Temukan 3 paket layanan IT profesional terfavorit dan 3 produk IT pilihan bergaransi resmi untuk menunjang
+            produktivitas kantor maupun personal.
+          </p>
+        </div>
+
+        <!-- Controls: Tabs & Search -->
+        <div class="catalog-controls">
+          <div class="tabs-group">
+            <button class="tab-btn active" data-tab="all">Semua (6)</button>
+            <button class="tab-btn" data-tab="service">3 Jasa Layanan IT</button>
+            <button class="tab-btn" data-tab="product">3 Produk IT</button>
+          </div>
+
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="text" id="searchInput" placeholder="Cari layanan (web, jaringan, cloud) atau produk...">
+          </div>
+        </div>
+
+        <!-- Dynamic Grid Container -->
+        <div class="cards-grid" id="catalogGrid">
+          <!-- Javascript will render cards here dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KEUNGGULAN KAMI ================= -->
+    <section class="section" id="keunggulan">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Mengapa Memilih Kami</div>
+          <h2>Standar Kerja Tinggi untuk <span class="gradient-text">Ketenangan Anda</span></h2>
+          <p>Kami memadukan keahlian teknis teruji, perangkat resmi berkualitas, dan komitmen layanan purna jual yang
+            transparan.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Teknisi Bersertifikasi</h3>
+            <p>Dikerjakan langsung oleh engineer berpengalaman dengan sertifikasi Mikrotik (MTCNA/MTCRE), Cisco (CCNA),
+              serta AWS Cloud Solutions.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3>Pengerjaan Cepat & Rapi</h3>
+            <p>Manajemen kabel server berstandar rapi, kode website modular dan terstruktur, serta pengiriman unit
+              produk aman tepat waktu.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h3>Harga Transparan & Garansi</h3>
+            <p>Tidak ada biaya tersembunyi. Dilengkapi SPK (Surat Perjanjian Kerja) resmi, faktur pajak resmi
+              perusahaan, dan jaminan purna jual.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3>Dukungan Teknis 24/7</h3>
+            <p>Tim support siap membantu kendala teknis darurat secara remote maupun on-site agar operasional bisnis
+              Anda tetap berjalan normal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONI KLIEN ================= -->
+    <section class="section section-alt" id="testimoni">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Kepuasan Pelanggan</div>
+          <h2>Cerita Sukses dari <span class="gradient-text">Mitra Bisnis Kami</span></h2>
+          <p>Dengarkan pengalaman perusahaan dan instansi yang telah mempercayakan infrastruktur IT dan kebutuhan
+            hardware mereka kepada kami.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="rating-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Website perusahaan dan sistem kasir online kami dibangun oleh tim Kukuhadi Tech. Performanya sangat
+              cepat, desainnya elegan, dan omzet kami melonjak karena sistem pesanan terintegrasi rapi dengan WhatsApp!"
+            </p>
+            <div class="client-profile">
+              <div class="client-avatar">BS</div>
+              <div class="client-info">
+                <h4>Bambang Santoso</h4>
+                <p>Direktur, PT Samudra Logistik</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rating-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Kami memesan 15 unit PC Workstation rakitan serta instalasi jaringan kabel LAN di kantor 3 lantai. Semua
+              kabel dirapikan di server rack dengan sangat estetik dan internet lancar jaya tanpa buffering."
+            </p>
+            <div class="client-profile">
+              <div class="client-avatar">DA</div>
+              <div class="client-info">
+                <h4>Dian Anggraeni</h4>
+                <p>IT Operations Manager, Kreatif Media Corp</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rating-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Layanan migrasi Cloud dan perlindungan firewall mereka menyelamatkan data penting kantor kami dari
+              percobaan serangan malware. Respons teknisinya luar biasa tanggap, bahkan di luar jam kerja!"
+            </p>
+            <div class="client-profile">
+              <div class="client-avatar">RH</div>
+              <div class="client-info">
+                <h4>Reza Hidayat</h4>
+                <p>Founder & CTO, FinSmart Nusantara</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Tanya Jawab</div>
+          <h2>Pertanyaan yang Sering <span class="gradient-text">Diajukan (FAQ)</span></h2>
+          <p>Informasi ringkas mengenai alur pemesanan produk, proses pengerjaan jasa IT, dan kebijakan garansi.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Berapa lama estimasi pengerjaan website atau aplikasi kustom?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Untuk website company profile standar memakan waktu 5-10 hari kerja. Sementara sistem kustom ERP,
+              e-commerce, atau aplikasi berbasis web kompleks memerlukan 2-4 minggu termasuk tahap pengujian dan
+              pelatihan staf Anda.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah produk PC, laptop, dan hardware jaringan bergaransi resmi?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Ya, 100% produk hardware baru dan bergaransi resmi distributor Indonesia (1 hingga 3 tahun tergantung
+              brand). Lisensi software (Windows, Office, Antivirus) adalah key original yang diaktivasi langsung ke
+              server resmi.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana skema pembayaran untuk proyek jasa layanan IT?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Kami menerapkan skema termin yang aman dan transparan: DP 50% setelah penandatanganan SPK/kesepakatan, dan
+              pelunasan 50% setelah pengerjaan selesai serta lolos User Acceptance Testing (UAT).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah melayani instalasi on-site ke luar kota?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Tentu saja! Untuk instalasi jaringan, server rack, dan setup infrastruktur kantor, tim teknisi kami siap
+              diberangkatkan ke seluruh wilayah Indonesia dengan akomodasi yang disepakati sebelumnya.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAK & PEMESANAN ================= -->
+    <section class="section section-alt" id="kontak">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="section-tag">Hubungi Kami</div>
+            <h3>Siap Mengembangkan <span class="gradient-text">Infrastruktur IT Anda?</span></h3>
+            <p>Konsultasikan kebutuhan sistem kantor Anda atau tanyakan ketersediaan stok perangkat. Tim kami siap
+              memberikan penawaran harga terbaik hari ini.</p>
+
+            <div class="info-items">
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <h4>Lokasi Kantor & Workshop</h4>
+                  <p>Jl. Teknologi Mandiri No. 88, IT Business District, Indonesia</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <h4>WhatsApp & Telepon Resmi</h4>
+                  <p><a href="https://wa.me/6283833621956" target="_blank">+62 838-3362-1956 (Direct Fast Response)</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <h4>Email Korporat</h4>
+                  <p><a href="mailto:kontak@kukuhadi-tech.com">kontak@kukuhadi-tech.com</a></p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <h4>Jam Operasional</h4>
+                  <p>Senin - Sabtu: 08:30 - 18:00 WIB (Support NOC 24/7)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Contact Form -->
+          <form class="contact-form" id="contactForm">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Kirim Pesan Langsung</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Isi form berikut untuk
+              terhubung langsung dengan konsultan IT kami via WhatsApp.</p>
+
+            <div class="form-group">
+              <label for="contactName">Nama Lengkap</label>
+              <input type="text" id="contactName" class="form-control" placeholder="Contoh: Budi Pratama" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="contactEmail">Alamat Email</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="nama@perusahaan.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Nomor WhatsApp</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="083833621956" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Pesan atau Kebutuhan IT</label>
+              <textarea id="contactMessage" class="form-control"
+                placeholder="Jelaskan kebutuhan pengadaan produk atau layanan IT Anda..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              Kirim Pesan ke WhatsApp Kami
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div class="brand-name">KUKUHADI<span>TECH</span></div>
+          </div>
+          <p>
+            Pusat solusi teknologi terintegrasi untuk UKM, instansi pendidikan, dan enterprise. Melayani jasa pembuatan
+            website, instalasi jaringan, sistem cloud, dan hardware resmi.
+          </p>
+          <div style="display:flex; gap:0.5rem;">
+            <span class="status-pill" style="font-size:0.75rem;">Terdaftar Resmi</span>
+            <span class="status-pill"
+              style="font-size:0.75rem; background:rgba(2,132,199,0.15); color:var(--primary);">Garansi 100%</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>3 Layanan IT</h4>
+          <ul class="footer-links">
+            <li><a href="#katalog">Pembuatan Web & App</a></li>
+            <li><a href="#katalog">Instalasi & Maintenance Jaringan</a></li>
+            <li><a href="#katalog">Cloud & Cyber Security</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultModal()">Audit Keamanan IT</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultModal()">Kontrak Maintenance Bulanan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>3 Produk IT</h4>
+          <ul class="footer-links">
+            <li><a href="#katalog">Laptop & PC Workstation Pro</a></li>
+            <li><a href="#katalog">Router & Switch Enterprise</a></li>
+            <li><a href="#katalog">Lisensi Software Asli</a></li>
+            <li><a href="#katalog">Perangkat CCTV IP</a></li>
+            <li><a href="#katalog">Aksesoris & Kabel UTP Cat6</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Bantuan & Dukungan</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">Pusat Bantuan & FAQ</a></li>
+            <li><a href="#kontak">Hubungi Tim Sales</a></li>
+            <li><a href="https://wa.me/6283833621956" target="_blank">WhatsApp Layanan Darurat</a></li>
+            <li><a href="#keunggulan">Syarat & Kebijakan Garansi</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>Kukuhadi Tech Solutions</strong>. Seluruh Hak Cipta Dilindungi.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="#hero" style="color:var(--text-muted); text-decoration:none;">Kembali ke Atas ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= CART DRAWER ================= -->
+  <div class="drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer">
+      <div class="drawer-header">
+        <h3 style="font-size: 1.15rem; display:flex; align-items:center; gap:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+          </svg>
+          Keranjang Pesanan Anda
+        </h3>
+        <button class="modal-close" id="closeCartBtn" aria-label="Tutup Keranjang">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="drawer-body" id="drawerItems">
+        <!-- Cart items rendered by script.js -->
+      </div>
+
+      <div class="drawer-footer">
+        <div class="drawer-total">
+          <span>Total Estimasi:</span>
+          <span id="drawerTotal" style="color:var(--primary);">Rp 0</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-secondary btn-sm" id="clearCartBtn" style="flex: 1;">Kosongkan</button>
+          <button class="btn btn-primary" id="checkoutCartBtn" style="flex: 2;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            Pesan via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DETAIL MODAL ================= -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="detailModalTitle">Detail Layanan / Produk</h3>
+        <button class="modal-close" id="closeDetailBtn" aria-label="Tutup">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="detailModalContent">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CONSULTATION MODAL ================= -->
+  <div class="modal-overlay" id="consultModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Jadwalkan Konsultasi IT Gratis</h3>
+        <button class="modal-close" id="closeConsultBtn" aria-label="Tutup">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="consultForm" style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="form-group">
+            <label for="consultName">Nama Lengkap / Kontak Person</label>
+            <input type="text" id="consultName" class="form-control" placeholder="Nama Anda" required>
+          </div>
+
+          <div class="form-group">
+            <label for="consultCompany">Nama Perusahaan / Bisnis (Opsional)</label>
+            <input type="text" id="consultCompany" class="form-control" placeholder="Nama PT / CV / Toko">
+          </div>
+
+          <div class="form-group">
+            <label for="consultService">Pilih Layanan IT yang Dibutuhkan</label>
+            <select id="consultService" class="form-control" required>
+              <!-- Filled by JS -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="consultNote">Uraian Kebutuhan / Masalah IT Anda</label>
+            <textarea id="consultNote" class="form-control"
+              placeholder="Jelaskan kebutuhan seperti jumlah komputer, jenis website, atau rencana infrastruktur..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            Kirim Permintaan Konsultasi via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/6283833621956?text=Halo%20Kukuhadi%20Tech%20Solutions!%20Saya%20ingin%20konsultasi%20layanan%20IT%20dan%20produk."
+    target="_blank" class="float-wa" title="Hubungi CS via WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.03C9.36 7.03 9.09 7.1 8.87 7.33C8.65 7.57 8.02 8.16 8.02 9.36C8.02 10.56 8.9 11.72 9.02 11.89C9.15 12.06 10.73 14.5 13.17 15.55C15.2 16.43 15.61 16.25 16.06 16.21C16.5 16.17 17.5 15.62 17.7 15.05C17.9 14.48 17.9 14 17.84 13.9C17.78 13.8 17.62 13.74 17.38 13.62C17.14 13.5 15.96 12.92 15.74 12.84C15.52 12.76 15.36 12.72 15.2 12.96C15.03 13.2 14.57 13.74 14.43 13.9C14.29 14.07 14.15 14.09 13.91 13.97C13.67 13.85 12.9 13.6 11.98 12.78C11.26 12.14 10.77 11.35 10.63 11.11C10.49 10.87 10.61 10.74 10.73 10.62C10.84 10.51 10.98 10.33 11.1 10.19C11.22 10.05 11.26 9.95 11.34 9.79C11.42 9.63 11.38 9.49 11.32 9.37C11.26 9.25 10.77 8.05 10.57 7.55C10.37 7.07 10.17 7.13 10.01 7.12C9.87 7.11 9.7 7.03 9.53 7.03Z" />
+    </svg>
+    <span>Chat WhatsApp Kami</span>
+  </a>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
